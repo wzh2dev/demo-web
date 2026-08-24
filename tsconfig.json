@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "strict": true,
+    "removeComments": true
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "vitest*.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}
