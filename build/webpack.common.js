@@ -1,0 +1,68 @@
+'use strict'
+const webpack = require('webpack')
+const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
+module.exports = {
+  context: path.resolve(__dirname, '../'),
+  entry: {
+    app: './src/main.ts'
+  },
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].js',
+    publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, '..', 'src'),
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: path.posix.join('static', 'img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: path.posix.join('static', 'media/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.ProgressPlugin(),
+    new VueLoaderPlugin()
+  ]
+}
