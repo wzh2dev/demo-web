@@ -1,5 +1,4 @@
 'use strict'
-const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -24,7 +23,7 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../static'),
+          from: path.resolve(__dirname, '..', 'static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
