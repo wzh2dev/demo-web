@@ -16,13 +16,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '..', 'static'),
+          from: path.resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
       ]
     })
-  ]
+  ],
+
+  devServer: {
+    port: 8080,
+    open: true
+  },
+  devtool: 'eval-cheap-source-map'
 })
 
 module.exports = devWebpackConfig

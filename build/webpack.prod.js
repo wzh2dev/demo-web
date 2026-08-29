@@ -15,15 +15,15 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       template: './public/index.html',
       inject: true,
       minify: {
-        removeComments: true,
         collapseWhitespace: true,
-        removeAttributeQuotes: true
+        removeAttributeQuotes: true,
+        removeComments: true
       }
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '..', 'static'),
+          from: path.resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
@@ -37,7 +37,8 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       minRatio: 0.8
     }),
     new BundleAnalyzerPlugin()
-  ]
+  ],
+  devtool: 'nosources-source-map'
 })
 
 module.exports = prodWebpackConfig
