@@ -1,0 +1,18 @@
+.nvmrc
+  h_ec0865e8a99e9f 1
+package.json
+  h_ec0865e8a99e9f 2-19
+tsconfig.json
+  h_ec0865e8a99e9f 1-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "9f84decd371e90f4f4a26308e0cccdf11476318d",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
