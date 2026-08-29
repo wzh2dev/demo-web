@@ -2,13 +2,27 @@
 const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
+const { resolve } = require('path')
 const baseWebpackConfig = require('./webpack.common.js')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const prodWebpackConfig = merge(baseWebpackConfig, {
   mode: "production",
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      }
+    ]
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -23,21 +37,23 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../static'),
+          from: resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
       ]
     }),
     new CompressionWebpackPlugin({
-      filename: '[path].gz[query]',
+      filename: '[path][name][ext].gz',
       algorithm: 'gzip',
       test: new RegExp('\\.(js|css)$'),
       threshold: 10240,
       minRatio: 0.8
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+    new MiniCssExtractPlugin()
   ],
+
   devtool: 'nosources-source-map'
 })
 

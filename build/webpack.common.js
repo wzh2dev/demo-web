@@ -40,13 +40,6 @@ module.exports = {
             options: { appendTsSuffixTo: [/\.vue$/] }
           },
           {
-            test: /\.css$/,
-            use: [
-              'vue-style-loader',
-              'css-loader'
-            ]
-          },
-          {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             type: 'asset/resource',
             generator: {

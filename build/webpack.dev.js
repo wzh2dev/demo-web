@@ -2,11 +2,24 @@
 const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
+const { resolve } = require('path')
 const baseWebpackConfig = require('./webpack.common.js')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: "development",
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -16,7 +29,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../static'),
+          from: resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
@@ -28,6 +41,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     port: 8080,
     open: true
   },
+
   devtool: 'eval-cheap-source-map'
 })
 
