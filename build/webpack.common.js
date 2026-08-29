@@ -41,23 +41,26 @@ module.exports = {
           },
           {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-            type: 'asset/resource',
-            generator: {
-              filename: path.posix.join('static', 'img/[name].[hash:7].[ext]')
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
             }
           },
           {
             test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            type: 'asset/resource',
-            generator: {
-              filename: path.posix.join('static', 'media/[name].[hash:7].[ext]')
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: path.posix.join('static', 'media/[name].[hash:7].[ext]')
             }
           },
           {
             test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-            type: 'asset/resource',
-            generator: {
-              filename: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
             }
           }]
       }

@@ -7,6 +7,7 @@ const baseWebpackConfig = require('./webpack.common.js')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const prodWebpackConfig = merge(baseWebpackConfig, {
   mode: "production",
@@ -44,14 +45,15 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       ]
     }),
     new CompressionWebpackPlugin({
-      filename: '[path][name][ext].gz',
+      filename: '[path].gz[query]',
       algorithm: 'gzip',
       test: new RegExp('\\.(js|css)$'),
       threshold: 10240,
       minRatio: 0.8
     }),
     new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new OptimizeCSSAssetsPlugin()
   ],
 
   devtool: 'nosources-source-map'
