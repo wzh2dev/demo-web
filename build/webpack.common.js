@@ -47,6 +47,7 @@ const commonWebpackConfig = {
             loader: 'url-loader',
             options: {
               limit: 10000,
+              esModule: false,
               name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
             }
           },
@@ -55,6 +56,7 @@ const commonWebpackConfig = {
             loader: 'url-loader',
             options: {
               limit: 10000,
+              esModule: false,
               name: path.posix.join('static', 'media/[name].[hash:7].[ext]')
             }
           },
@@ -63,6 +65,7 @@ const commonWebpackConfig = {
             loader: 'url-loader',
             options: {
               limit: 10000,
+              esModule: false,
               name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
             }
           }]
