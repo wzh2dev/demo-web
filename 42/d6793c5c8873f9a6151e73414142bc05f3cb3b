@@ -1,0 +1,71 @@
+build/webpack.common.js
+  s_f9941f1738c9cb::t_50a4938b9ea7df 50
+  s_f9941f1738c9cb::t_c5a5071ccaf125 59,68
+.prettierrc
+  h_ec0865e8a99e9f 4
+  s_f9941f1738c9cb::t_9bfc9225e402d0 5
+  s_19239724d5e0b4::t_64347b954a83b4 6
+.eslintrc.js
+  s_984876e9286837::t_b961196becae6d 5
+  s_f9941f1738c9cb::t_31dc588e4bc620 6
+package.json
+  s_f9941f1738c9cb::t_404a502e318248 29
+  s_f9941f1738c9cb::t_43eeb6e09f3cb2 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "42d6793c5c8873f9a6151e73414142bc05f3cb3b",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  },
+  "sessions": {
+    "s_19239724d5e0b4": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a92591b97242db4b158cf8f",
+        "model": "glm-5.3__dev"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    },
+    "s_984876e9286837": {
+      "agent_id": {
+        "tool": "trae-code-edit",
+        "id": "ai_tab-2026082923354601000001701058487B4",
+        "model": "default"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "source_scene": "cue",
+        "client_type": "ide",
+        "tool": "trae-code-edit",
+        "external_session_id": "2026082923354601000001701058487B4",
+        "edit_kind": "file_edit"
+      }
+    },
+    "s_f9941f1738c9cb": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a92e08b9cadfefe14cd4994",
+        "model": "glm-5.3__dev"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "edit_kind": "file_edit",
+        "client_type": "ide",
+        "dedupe_key": "6a92e08b9cadfefe14cd4994:6a930aa29cadfefe14cd4dc0:afterEdit:2ef6fb58",
+        "runtime_client": "trae-tob-git-ai",
+        "tool_id": "Write",
+        "source_scene": "unknown",
+        "tool_use_id": "6a930aa29cadfefe14cd4dc0",
+        "external_session_id": "6a92e08b9cadfefe14cd4994",
+        "operation_id": "6a930aa29cadfefe14cd4dc0",
+        "tool_type": "agent",
+        "session_id": "6a92e08b9cadfefe14cd4994"
+      }
+    }
+  }
+}
