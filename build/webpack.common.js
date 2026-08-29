@@ -3,7 +3,9 @@ const webpack = require('webpack')
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-module.exports = {
+const cssLoaders = ['css-loader']
+
+const commonWebpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.ts'
@@ -16,7 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.runtime.esm.js',
       '@': path.join(__dirname, '..', 'src'),
     }
   },
@@ -71,3 +73,5 @@ module.exports = {
     new VueLoaderPlugin()
   ]
 }
+
+module.exports = { commonWebpackConfig, cssLoaders }

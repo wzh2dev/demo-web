@@ -3,19 +3,20 @@ const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
-const baseWebpackConfig = require('./webpack.common.js')
+const { commonWebpackConfig, cssLoaders } = require('./webpack.common.js')
 
-const devWebpackConfig = merge(baseWebpackConfig, {
+const devWebpackConfig = merge(commonWebpackConfig, {
   mode: "development",
+
+  output: {
+    filename: '[name].js'
+  },
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ['style-loader', ...cssLoaders]
       }
     ]
   },
@@ -39,7 +40,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   devServer: {
     port: 8080,
-    open: true
+    open: true,
+    hot: true
   },
 
   devtool: 'eval-cheap-source-map'
