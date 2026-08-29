@@ -51,10 +51,16 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       threshold: 10240,
       minRatio: 0.8
     }),
-    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+    new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin(),
     new OptimizeCSSAssetsPlugin()
   ],
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
 
   devtool: 'nosources-source-map'
 })
