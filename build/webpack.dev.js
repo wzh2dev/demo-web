@@ -2,15 +2,11 @@
 const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { resolve } = require('path')
+const path = require('path')
 const { commonWebpackConfig, cssLoaders } = require('./webpack.common.js')
 
 const devWebpackConfig = merge(commonWebpackConfig, {
   mode: "development",
-
-  output: {
-    filename: '[name].js'
-  },
 
   module: {
     rules: [
@@ -30,7 +26,7 @@ const devWebpackConfig = merge(commonWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: resolve(__dirname, '../static'),
+          from: path.resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }

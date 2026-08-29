@@ -12,7 +12,7 @@ const commonWebpackConfig = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[contenthash:8].js',
+    filename: '[name].js',
     publicPath: '/'
   },
   resolve: {
@@ -29,12 +29,13 @@ const commonWebpackConfig = {
         loader: 'vue-loader'
       },
       {
+        test: /\.(j|t)s$|\.vue$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      {
         oneOf: [
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/
-          },
           {
             test: /\.ts$/,
             loader: 'ts-loader',

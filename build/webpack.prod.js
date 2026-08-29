@@ -2,7 +2,7 @@
 const { merge } = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { resolve } = require('path')
+const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -22,6 +22,12 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
     ]
   },
 
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: path.posix.join('static', 'js/[name].[chunkhash].js'),
+    chunkFilename: path.posix.join('static', 'js/[id].[chunkhash].js')
+  },
+
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -37,7 +43,7 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: resolve(__dirname, '../static'),
+          from: path.resolve(__dirname, '../static'),
           to: "public",
           globOptions: { ignore: ['.*'] }
         }
@@ -54,7 +60,7 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
       analyzerMode: 'disabled'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css'
+      filename: path.posix.join('static', 'css/[name].[chunkhash].css')
     }),
     new OptimizeCSSAssetsPlugin()
   ],
