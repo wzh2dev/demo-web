@@ -48,7 +48,7 @@ const commonWebpackConfig = {
             options: {
               limit: 10000,
               esModule: false,
-              name: path.posix.join('static', 'img/[name].[hash:7].[ext]')
+              name: path.posix.join('static', 'img/[hash:7].[ext]')
             }
           },
           {
@@ -57,7 +57,7 @@ const commonWebpackConfig = {
             options: {
               limit: 10000,
               esModule: false,
-              name: path.posix.join('static', 'media/[name].[hash:7].[ext]')
+              name: path.posix.join('static', 'media/[hash:7].[ext]')
             }
           },
           {
@@ -66,7 +66,7 @@ const commonWebpackConfig = {
             options: {
               limit: 10000,
               esModule: false,
-              name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
+              name: path.posix.join('static', 'fonts/[hash:7].[ext]')
             }
           }]
       }

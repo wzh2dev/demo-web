@@ -7,6 +7,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { commonWebpackConfig, cssLoaders } = require('./webpack.common.js')
 
@@ -23,9 +24,8 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: path.posix.join('static', 'js/[name].[chunkhash].js'),
-    chunkFilename: path.posix.join('static', 'js/[id].[chunkhash].js')
+    filename: path.posix.join('static', 'js/[chunkhash].js'),
+    chunkFilename: path.posix.join('static', 'js/[chunkhash].js')
   },
 
   plugins: [
@@ -60,7 +60,7 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
       analyzerMode: 'disabled'
     }),
     new MiniCssExtractPlugin({
-      filename: path.posix.join('static', 'css/[name].[chunkhash].css')
+      filename: path.posix.join('static', 'css/[contenthash:10].css')
     }),
     new OptimizeCSSAssetsPlugin()
   ],
@@ -68,7 +68,13 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
   optimization: {
     splitChunks: {
       chunks: 'all'
-    }
+    },
+    runtimeChunk: {
+      name: 'runtime'
+    },
+    minimizer: [
+      new TerserPlugin({})
+    ]
   },
 
   devtool: 'nosources-source-map'

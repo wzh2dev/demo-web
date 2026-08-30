@@ -35,9 +35,12 @@ const devWebpackConfig = merge(commonWebpackConfig, {
   ],
 
   devServer: {
+    compress: true,
     port: 8080,
     open: true,
-    hot: true
+    hot: true,
+    clientLogLevel: 'info',
+    quiet: false
   },
 
   devtool: 'eval-cheap-source-map'
