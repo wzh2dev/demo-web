@@ -1,0 +1,21 @@
+package.json
+  s_1eae57f5a33900::t_192e5b6d596e14 7-9
+src/main.ts
+  s_1eae57f5a33900::t_1567a3588fe2af 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "0cef709ba42d70d91b2f70d482f7478b8b6169ce",
+  "prompts": {},
+  "sessions": {
+    "s_1eae57f5a33900": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_1eae57f5a33900",
+        "model": "unknown"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
