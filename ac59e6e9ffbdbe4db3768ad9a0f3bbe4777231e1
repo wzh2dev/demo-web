@@ -1,0 +1,60 @@
+build/webpack.common.js
+  s_f9941f1738c9cb::t_bbfbd05fbc0e01 44-47,52-55,60-63
+build/webpack.prod.js
+  h_ec0865e8a99e9f 55-56
+  s_4caf6ceff5200c::t_3ea87648f667ab 10
+  s_f9941f1738c9cb::t_4abd7b70c096fc 48
+.npmrc
+  h_ec0865e8a99e9f 7
+package.json
+  s_f9941f1738c9cb::t_a5a731772fa732 23,36
+  s_f9941f1738c9cb::t_a20d64d7a87cd6 15-17,20-22,24-25,27,30-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "ac59e6e9ffbdbe4db3768ad9a0f3bbe4777231e1",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  },
+  "sessions": {
+    "s_4caf6ceff5200c": {
+      "agent_id": {
+        "tool": "trae-cue",
+        "id": "ai_tab-icr-257db2b6-39cc-480f-835b-4466427ff9c8",
+        "model": "default"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "edit_kind": "file_edit",
+        "external_session_id": "icr-257db2b6-39cc-480f-835b-4466427ff9c8",
+        "source_scene": "cue",
+        "client_type": "ide",
+        "tool": "trae-cue"
+      }
+    },
+    "s_f9941f1738c9cb": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a92e08b9cadfefe14cd4994",
+        "model": "glm-5.3__dev"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "edit_kind": "bash",
+        "tool_name": "RunCommand",
+        "session_id": "6a92e08b9cadfefe14cd4994",
+        "external_session_id": "6a92e08b9cadfefe14cd4994",
+        "operation_id": "6a92e51c9cadfefe14cd4a55",
+        "runtime_client": "trae-tob-git-ai",
+        "source_scene": "agent",
+        "tool_use_id": "6a92e51c9cadfefe14cd4a55",
+        "display_model_name": "GLM-5.3",
+        "client_type": "ide"
+      }
+    }
+  }
+}
