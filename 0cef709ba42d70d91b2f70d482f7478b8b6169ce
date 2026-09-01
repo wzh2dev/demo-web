@@ -1,0 +1,16 @@
+package.json
+  h_ec0865e8a99e9f 7-9
+src/main.ts
+  h_ec0865e8a99e9f 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "0cef709ba42d70d91b2f70d482f7478b8b6169ce",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
