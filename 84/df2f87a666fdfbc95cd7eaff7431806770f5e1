@@ -1,0 +1,31 @@
+tsconfig.json
+  s_ed3e8ef61313d2::t_482ca20fe4dce9 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "84df2f87a666fdfbc95cd7eaff7431806770f5e1",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  },
+  "sessions": {
+    "s_ed3e8ef61313d2": {
+      "agent_id": {
+        "tool": "trae-code-edit",
+        "id": "ai_tab-20260902005142010003157106341B81B",
+        "model": "default"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "client_type": "ide",
+        "source_scene": "cue",
+        "tool": "trae-code-edit",
+        "edit_kind": "file_edit",
+        "external_session_id": "20260902005142010003157106341B81B"
+      }
+    }
+  }
+}
