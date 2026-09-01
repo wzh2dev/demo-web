@@ -4,7 +4,12 @@ module.exports = {
   root: true,
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 6,
+    sourceType: 'module'
   },
-  extends: ['prettier']
+  extends: ['prettier'],
+  rules: {
+    'no-console': 'warn'
+  }
 }

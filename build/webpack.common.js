@@ -19,28 +19,37 @@ const commonWebpackConfig = {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js',
-      '@': path.join(__dirname, '..', 'src'),
+      '@': path.join(__dirname, '..', 'src')
     }
   },
   module: {
     rules: [
       {
+        test: /\.((j|t)s|vue)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        options: {
+          fix: true
+        }
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-      {
-        test: /\.(j|t)s$|\.vue$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      },
+
       {
         oneOf: [
           {
             test: /\.ts$/,
-            loader: 'ts-loader',
             exclude: /node_modules/,
+            loader: 'ts-loader',
             options: { appendTsSuffixTo: [/\.vue$/] }
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
           },
           {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -68,7 +77,8 @@ const commonWebpackConfig = {
               esModule: false,
               name: path.posix.join('static', 'fonts/[hash:7].[ext]')
             }
-          }]
+          }
+        ]
       }
     ]
   },
