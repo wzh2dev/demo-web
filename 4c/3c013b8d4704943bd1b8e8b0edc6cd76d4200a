@@ -1,0 +1,19 @@
+build/webpack.common.js
+  s_2cc81a3be401f1::t_8379564d879d21 49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "4c3c013b8d4704943bd1b8e8b0edc6cd76d4200a",
+  "prompts": {},
+  "sessions": {
+    "s_2cc81a3be401f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_2cc81a3be401f1",
+        "model": "unknown"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
