@@ -1,0 +1,14 @@
+.github/workflows/ci.yml
+  h_ec0865e8a99e9f 5,7,19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "3f98213f7100bfd69ca4405b562a6ca372a062f0",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
