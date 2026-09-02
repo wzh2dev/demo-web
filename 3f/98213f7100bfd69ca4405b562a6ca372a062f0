@@ -1,0 +1,21 @@
+.github/workflows/ci.yml
+  s_1573d653779e36::t_b717a60df7e998 5,7,19-20
+package-lock.json
+  s_1573d653779e36::t_1b462b62b41121 1-15994
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "3f98213f7100bfd69ca4405b562a6ca372a062f0",
+  "prompts": {},
+  "sessions": {
+    "s_1573d653779e36": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_1573d653779e36",
+        "model": "unknown"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  }
+}
