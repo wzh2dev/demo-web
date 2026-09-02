@@ -37,7 +37,6 @@ const commonWebpackConfig = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-
       {
         oneOf: [
           {
@@ -47,7 +46,7 @@ const commonWebpackConfig = {
             options: { appendTsSuffixTo: [/\.vue$/] }
           },
           {
-            test: /\.m?js$/,
+            test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
           },
