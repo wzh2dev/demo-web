@@ -12,7 +12,7 @@ const devWebpackConfig = merge(commonWebpackConfig, {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', ...cssLoaders]
+        use: [require.resolve('style-loader'), ...cssLoaders]
       }
     ]
   },

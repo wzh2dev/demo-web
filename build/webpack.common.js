@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const cssLoaders = ['css-loader']
+const cssLoaders = [require.resolve('css-loader')]
 
 const commonWebpackConfig = {
   context: path.resolve(__dirname, '../'),
@@ -28,31 +28,34 @@ const commonWebpackConfig = {
         test: /\.((j|t)s|vue)$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        loader: 'eslint-loader',
+        loader: require.resolve('eslint-loader'),
         options: {
           fix: true
         }
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: require.resolve('vue-loader')
       },
       {
         oneOf: [
           {
             test: /\.ts$/,
             exclude: /node_modules/,
-            loader: 'ts-loader',
+            loader: require.resolve('ts-loader'),
             options: { appendTsSuffixTo: [/\.vue$/] }
           },
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loader: require.resolve('babel-loader'),
+            options: {
+              cacheDirectory: true
+            }
           },
           {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
               esModule: false,
@@ -61,7 +64,7 @@ const commonWebpackConfig = {
           },
           {
             test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
               esModule: false,
@@ -70,7 +73,7 @@ const commonWebpackConfig = {
           },
           {
             test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
               esModule: false,
