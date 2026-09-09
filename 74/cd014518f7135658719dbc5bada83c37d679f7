@@ -1,0 +1,39 @@
+build/webpack.prod.js
+  h_ec0865e8a99e9f 15,47
+build/webpack.dev.js
+  s_298f45ee564a0a::t_f6d1d8ba80f891 46-51
+  h_ec0865e8a99e9f 9,30,37-38,45
+  s_298f45ee564a0a::t_c24ecc10155b11 52
+.prettierignore
+  h_ec0865e8a99e9f 3
+build/webpack.common.js
+  h_ec0865e8a99e9f 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "74cd014518f7135658719dbc5bada83c37d679f7",
+  "prompts": {},
+  "humans": {
+    "h_ec0865e8a99e9f": {
+      "author": "Claude Sonnet 5 <noreply@anthropic.com>"
+    }
+  },
+  "sessions": {
+    "s_298f45ee564a0a": {
+      "agent_id": {
+        "tool": "trae-code-edit",
+        "id": "ai_tab-202609060026330100031561593454554",
+        "model": "default"
+      },
+      "human_author": "Claude Sonnet 5 <noreply@anthropic.com>",
+      "custom_attributes": {
+        "source_scene": "cue",
+        "client_type": "ide",
+        "external_session_id": "202609060026330100031561593454554",
+        "edit_kind": "file_edit",
+        "tool": "trae-code-edit"
+      }
+    }
+  }
+}
