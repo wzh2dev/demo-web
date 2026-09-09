@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js",
     "build": "webpack --config build/webpack.prod.js",
-    "lint": "eslint --ext .js,.vue src",
-    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "lint:fix": "eslint --ext .js,.ts,.vue . --fix",
     "format": "prettier --cache --check .",
     "format:fix": "prettier --cache --write ."
   },
