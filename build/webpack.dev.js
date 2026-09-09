@@ -6,7 +6,7 @@ const path = require('path')
 const { commonWebpackConfig, cssLoaders } = require('./webpack.common.js')
 
 const devWebpackConfig = merge(commonWebpackConfig, {
-  mode: "development",
+  mode: 'development',
 
   module: {
     rules: [
@@ -27,12 +27,14 @@ const devWebpackConfig = merge(commonWebpackConfig, {
       patterns: [
         {
           from: path.resolve(__dirname, '../static'),
-          to: "public",
+          to: 'public',
           globOptions: { ignore: ['.*'] }
         }
       ]
     })
   ],
+
+  devtool: 'eval-cheap-source-map',
 
   devServer: {
     compress: true,
@@ -40,10 +42,14 @@ const devWebpackConfig = merge(commonWebpackConfig, {
     open: true,
     hot: true,
     clientLogLevel: 'info',
-    quiet: false
-  },
-
-  devtool: 'eval-cheap-source-map'
+    quiet: false,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
+    }
+  }
 })
 
 module.exports = devWebpackConfig

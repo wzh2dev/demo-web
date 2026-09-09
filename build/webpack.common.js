@@ -18,7 +18,7 @@ const commonWebpackConfig = {
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.runtime.esm.js',
+      vue$: 'vue/dist/vue.runtime.esm.js',
       '@': path.join(__dirname, '..', 'src')
     }
   },
@@ -30,7 +30,7 @@ const commonWebpackConfig = {
         enforce: 'pre',
         loader: require.resolve('eslint-loader'),
         options: {
-          fix: true
+          fix: false
         }
       },
       {
@@ -84,10 +84,7 @@ const commonWebpackConfig = {
       }
     ]
   },
-  plugins: [
-    new webpack.ProgressPlugin(),
-    new VueLoaderPlugin()
-  ]
+  plugins: [new webpack.ProgressPlugin(), new VueLoaderPlugin()]
 }
 
 module.exports = { commonWebpackConfig, cssLoaders }

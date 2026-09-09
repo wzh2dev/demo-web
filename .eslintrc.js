@@ -10,6 +10,8 @@ module.exports = {
   },
   extends: ['prettier'],
   rules: {
-    'no-console': 'warn'
+    'no-console': 'error',
+    'max-len': ['error', { code: 120 }],
+    'array-bracket-newline': ['error', 'consistent']
   }
 }

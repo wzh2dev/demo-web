@@ -12,7 +12,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { commonWebpackConfig, cssLoaders } = require('./webpack.common.js')
 
 const prodWebpackConfig = merge(commonWebpackConfig, {
-  mode: "production",
+  mode: 'production',
 
   module: {
     rules: [
@@ -44,7 +44,7 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
       patterns: [
         {
           from: path.resolve(__dirname, '../static'),
-          to: "public",
+          to: 'public',
           globOptions: { ignore: ['.*'] }
         }
       ]
@@ -72,9 +72,7 @@ const prodWebpackConfig = merge(commonWebpackConfig, {
     runtimeChunk: {
       name: 'runtime'
     },
-    minimizer: [
-      new TerserPlugin({})
-    ]
+    minimizer: [new TerserPlugin({})]
   },
 
   devtool: 'nosources-source-map'
